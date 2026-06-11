@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="從鄭宜農《圓缺》開始整理的臺語歌詞辭典原型。">
+  <title>歌裡的臺語｜卡片辭典</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav" aria-label="主要導覽">
+      <a class="brand" href="#">歌裡的臺語</a>
+      <button class="about-button" type="button" data-scroll-to="about">關於這本辭典</button>
+    </nav>
+
+    <div class="hero-copy">
+      <p class="eyebrow">人如何學會語言？</p>
+      <h1>從歌裡開始，<br>聽見語言如何發生。</h1>
+      <p class="intro">語言不只用來說明意思，也用來靠近他人、理解自己。第一輯從鄭宜農〈真罕得想起來〉出發，記下臺語的讀音、意思，以及一個詞在歌裡如何成為感受。</p>
+    </div>
+
+    <div class="toolbar" aria-label="詞語搜尋">
+      <label class="search">
+        <span class="sr-only">搜尋詞語</span>
+        <input id="search" type="search" placeholder="搜尋詞語、華語或英文意思…" autocomplete="off">
+        <button id="clear-search" type="button" aria-label="清除搜尋" hidden>清除</button>
+      </label>
+      <p id="search-hint" class="search-hint" aria-live="polite">輸入時會立即篩選詞卡</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="collection" aria-labelledby="collection-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">圓缺 · 01</p>
+          <h2 id="collection-title">真罕得想起來</h2>
+        </div>
+        <p id="result-count" class="result-count">12 張詞語卡片</p>
+      </div>
+
+      <div id="cards" class="cards"></div>
+      <p id="empty" class="empty" hidden>暫時找不到符合的詞。換一個關鍵字試試。</p>
+    </section>
+
+    <section id="about" class="about" aria-labelledby="about-title">
+      <p class="eyebrow">編輯方法</p>
+      <h2 id="about-title">不是把臺語換成華語而已</h2>
+      <div class="about-grid">
+        <p>每張卡片把辭典釋義、歌裡的實際意思和聽者感受到的語氣分開。還不能確定的讀音與用字，會明白標示為待校訂。</p>
+        <p>歌詞只節錄理解詞語所需的短句。第一版先專心處理詞語本身與「歌裡的語感」；跨作品用例留待資料更成熟時補充。</p>
+      </div>
+      <a class="source-link" href="https://sutian.moe.edu.tw/zh-hant/" target="_blank" rel="noreferrer">教育部《臺灣台語常用詞辭典》 ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>一個正在長大的臺語歌詞辭典 · 原型 0.1</p>
+    <p>內容仍待臺語母語者校訂</p>
+  </footer>
+
+  <template id="card-template">
+    <article class="card">
+      <div class="card-topline">
+        <span class="status"></span>
+      </div>
+      <div class="term-row">
+        <div>
+          <h3 class="term"></h3>
+          <p class="tailo"></p>
+        </div>
+        <span class="number"></span>
+      </div>
+      <div class="meanings">
+        <div>
+          <span>華語</span>
+          <p class="zh"></p>
+        </div>
+        <div>
+          <span>English</span>
+          <p class="en"></p>
+        </div>
+      </div>
+      <blockquote>
+        <p class="lyric"></p>
+        <cite>鄭宜農〈真罕得想起來〉</cite>
+      </blockquote>
+      <div class="note">
+        <span>歌裡的語感</span>
+        <p class="usage"></p>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
