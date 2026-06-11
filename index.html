@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="宜農辭典：從鄭宜農的作品出發，一個詞一個詞讀她如何用臺語唱歌。">
+  <title>宜農辭典｜一個詞一個詞讀鄭宜農</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav" aria-label="主要導覽">
+      <a class="brand" href="#top">宜農辭典</a>
+      <div class="nav-links">
+        <a href="#works">作品</a>
+        <a href="#words">詞語</a>
+        <a href="#method">編輯方法</a>
+        <a href="#about">關於</a>
+      </div>
+    </nav>
+
+    <div id="top" class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">人如何學會語言？</p>
+        <h1>她按怎用臺語唱歌？<br>我們一個詞一個詞讀。</h1>
+        <p class="intro">鄭宜農一邊學習，一邊用臺語創作。這是一份從作品出發的樂迷筆記：讀詞的意思，也讀一個詞如何在歌裡成為感受。</p>
+        <a class="text-link" href="https://www.marieclaire.com.tw/entertainment/music/64219" target="_blank" rel="noreferrer">閱讀她的臺語創作歷程 ↗</a>
+      </div>
+      <div class="orbit-art" aria-hidden="true">
+        <span class="orbit orbit-one"></span>
+        <span class="orbit orbit-two"></span>
+        <span class="moon"></span>
+        <span class="tide tide-one"></span>
+        <span class="tide tide-two"></span>
+      </div>
+    </div>
+
+    <div class="toolbar" aria-label="全站搜尋">
+      <label class="search">
+        <span class="sr-only">搜尋詞語</span>
+        <input id="search" type="search" placeholder="揣一个詞，抑是一句歌詞" autocomplete="off">
+        <button id="clear-search" type="button" aria-label="清除搜尋" hidden>清除</button>
+      </label>
+      <p id="search-hint" class="search-hint" aria-live="polite">可搜尋漢字、臺羅、華語、英文與歌詞</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="works" class="works" aria-labelledby="works-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">依作品閱讀</p>
+          <h2 id="works-title">作品書架</h2>
+        </div>
+        <p>語言是標籤，作品才是入口。</p>
+      </div>
+      <div id="work-shelves" class="work-shelves"></div>
+    </section>
+
+    <section id="words" class="collection" aria-labelledby="collection-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">《圓缺》· 2025</p>
+          <h2 id="collection-title">〈真罕得想起來〉</h2>
+          <div class="song-tags">
+            <span>#臺語</span>
+            <span>#專輯曲</span>
+            <span>#記憶與創傷</span>
+          </div>
+        </div>
+        <p id="result-count" class="result-count">12 張詞語卡片</p>
+      </div>
+
+      <div id="cards" class="cards"></div>
+      <p id="empty" class="empty" hidden>揣無符合的詞。換一個關鍵字試看覓。</p>
+    </section>
+
+    <section id="method" class="method" aria-labelledby="method-title">
+      <p class="eyebrow">編輯方法</p>
+      <h2 id="method-title">三層意思，三種責任</h2>
+      <div class="method-grid">
+        <article>
+          <span>01</span>
+          <h3>辭典義</h3>
+          <p>優先連結教育部《臺灣台語常用詞辭典》，讓讀者查看正式詞義與真人發音。</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>歌中義</h3>
+          <p>只說明這個詞在當句歌詞裡如何被使用，不把字典解釋直接套進作品。</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>編者的語感筆記</h3>
+          <p>保留主觀閱讀，明確標示它是一種詮釋，而不是作品唯一正確的答案。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about" aria-labelledby="about-title">
+      <div>
+        <p class="eyebrow">一起校訂</p>
+        <h2 id="about-title">讓「待校訂」真的有下一步</h2>
+      </div>
+      <div class="about-copy">
+        <p>每張卡都保留校訂狀態與更新日期。GitHub 倉庫建立後，母語者可以透過 Issue 模板回報讀音、用字、詞義或語感上的問題。</p>
+        <span id="report-status" class="report-status">GitHub 校訂入口將於公開倉庫建立後開放</span>
+        <a id="report-link" class="report-link" target="_blank" rel="noreferrer" hidden>回報詞條問題 ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>宜農辭典</strong>
+      <p>本站為樂迷自發的非官方整理計畫，與鄭宜農及其所屬廠牌無關。</p>
+    </div>
+    <p>歌詞著作權屬原權利人；本站僅節錄理解詞語所需之短句。</p>
+  </footer>
+
+  <template id="work-template">
+    <article class="work-card">
+      <div class="work-art" aria-hidden="true"></div>
+      <div class="work-meta">
+        <span class="work-year"></span>
+        <span class="work-state"></span>
+      </div>
+      <h3 class="work-title"></h3>
+      <p class="work-description"></p>
+      <div class="work-counts"></div>
+      <button class="work-action" type="button"></button>
+    </article>
+  </template>
+
+  <template id="card-template">
+    <article class="card">
+      <div class="card-topline">
+        <div class="language-tags"></div>
+        <span class="status"></span>
+      </div>
+      <div class="term-row">
+        <div>
+          <h3 class="term"></h3>
+          <p class="tailo"></p>
+          <p class="part-of-speech"></p>
+        </div>
+        <span class="number"></span>
+      </div>
+      <div class="dictionary-layer">
+        <span class="field-label">辭典義</span>
+        <p class="dictionary-definition"></p>
+        <p class="english"></p>
+        <a class="dictionary-link" target="_blank" rel="noreferrer">教育部辭典・聽發音 ↗</a>
+      </div>
+      <blockquote>
+        <p class="lyric"></p>
+        <cite class="lyric-source"></cite>
+      </blockquote>
+      <div class="song-meaning">
+        <span class="field-label">歌中義</span>
+        <p></p>
+      </div>
+      <div class="interpretation">
+        <span class="field-label">編者的語感筆記</span>
+        <p></p>
+      </div>
+      <div class="card-footer">
+        <div class="source-chips"></div>
+        <time class="updated-at"></time>
+      </div>
+    </article>
+  </template>
+
+  <script src="data/site-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
